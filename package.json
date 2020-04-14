@@ -1,6 +1,6 @@
 {
   "name": "rn-background-execution",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Ensure that critical tasks finish when your app moves to the background",
   "main": "index.js",
   "scripts": {
