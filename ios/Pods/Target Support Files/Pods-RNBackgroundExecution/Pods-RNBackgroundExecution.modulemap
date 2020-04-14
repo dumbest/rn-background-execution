@@ -1,0 +1,6 @@
+framework module Pods_RNBackgroundExecution {
+  umbrella header "Pods-RNBackgroundExecution-umbrella.h"
+
+  export *
+  module * { export * }
+}

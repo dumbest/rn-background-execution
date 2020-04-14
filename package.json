@@ -1,0 +1,21 @@
+{
+  "name": "rn-background-execution",
+  "version": "1.0.0",
+  "description": "Ensure that critical tasks finish when your app moves to the background",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "Thanakrit Weekhamchai",
+  "homepage": "https://github.com/dumbest/rn-background-execution",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "^0.61.5"
+  },
+  "devDependencies": {
+    "react-native": "^0.61.5"
+  }
+}
