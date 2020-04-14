@@ -1,7 +1,7 @@
 
 import { NativeModules } from 'react-native';
 
-const { RNBackgroundExecution } = NativeModules;
+const RNBackgroundExecution = NativeModules.RNBackgroundExecution;
 
 export default class BackgroundExecution {
   /**

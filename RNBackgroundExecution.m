@@ -18,7 +18,7 @@
 
 @implementation RNBackgroundExecution
 
-RCT_EXPORT_MODULE()
+RCT_EXPORT_MODULE(RNBackgroundExecution)
 
 - (dispatch_queue_t)methodQueue
 {
@@ -40,7 +40,7 @@ RCT_EXPORT_METHOD(beginBackgroundTaskWithExpirationHandler:(RCTResponseSenderBlo
 {
   self.backgroundTaskId = [UIApplication.sharedApplication beginBackgroundTaskWithName:@"RNBackgroundExecution task" expirationHandler:^{
     [UIApplication.sharedApplication endBackgroundTask:self.backgroundTaskId];
-    self.backgroundTaskID = UIBackgroundTaskInvalid;
+    self.backgroundTaskId = UIBackgroundTaskInvalid;
     
     callback(@[[NSNull null], [NSNull null]]);
   }];
@@ -48,9 +48,9 @@ RCT_EXPORT_METHOD(beginBackgroundTaskWithExpirationHandler:(RCTResponseSenderBlo
 
 RCT_EXPORT_METHOD(endBackgroundTask)
 {
-  if (self.backgroundTaskId !== UIBackgroundTaskInvalid) {
+  if (self.backgroundTaskId != UIBackgroundTaskInvalid) {
     [UIApplication.sharedApplication endBackgroundTask:self.backgroundTaskId];
-    self.backgroundTaskID = UIBackgroundTaskInvalid;
+    self.backgroundTaskId = UIBackgroundTaskInvalid;
   }
 }
 

@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.author       = { package['author'] => package['author'] }
   s.platform     = :ios, '7.0'
   s.source       = { :git => package['repository']['url'], :tag => package['version'] }
-  s.source_files = 'RNBackgroundExecution/**/*.{h,m}'
+  s.source_files = 'RNBackgroundExecution.{h,m}'
   s.requires_arc = true
 
   s.dependency 'React'
