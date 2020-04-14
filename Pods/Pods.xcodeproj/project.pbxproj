@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A747B73331B7D9D48DA960666715180F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		C14BA7C403ABCD6A953D293EBC119252 /* Pods-RNBackgroundExecution-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EAB23F86A02566398A6ADAEBBA9C61 /* Pods-RNBackgroundExecution-dummy.m */; };
-		D0CFC2B624453CAB00474BB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CFC2B424453CA200474BB3 /* UIKit.framework */; };
 		E099641B4DA3C94FBDFD5BDFB8B0E078 /* Pods-RNBackgroundExecution-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D25A236569EF72CD4AA1B06EABC2E807 /* Pods-RNBackgroundExecution-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -20,10 +19,9 @@
 		7831AA1B44C8A9D9267B0B9955C1D919 /* Pods-RNBackgroundExecution-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RNBackgroundExecution-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7E6A369065BE6B3C36C8D87F6BD9E4A7 /* Pods-RNBackgroundExecution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RNBackgroundExecution.debug.xcconfig"; sourceTree = "<group>"; };
 		9737FA9C533F17141C0451D3632EF9FF /* Pods-RNBackgroundExecution-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RNBackgroundExecution-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BCB05066C33E900D5CAAEE3A1BA9122C /* Pods_RNBackgroundExecution.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNBackgroundExecution.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BCB05066C33E900D5CAAEE3A1BA9122C /* Pods_RNBackgroundExecution.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RNBackgroundExecution.framework; path = "Pods-RNBackgroundExecution.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EAB23F86A02566398A6ADAEBBA9C61 /* Pods-RNBackgroundExecution-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RNBackgroundExecution-dummy.m"; sourceTree = "<group>"; };
-		D0CFC2B424453CA200474BB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D25A236569EF72CD4AA1B06EABC2E807 /* Pods-RNBackgroundExecution-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RNBackgroundExecution-umbrella.h"; sourceTree = "<group>"; };
 		F1BAF366C0202D1C115A56541C061CB9 /* Pods-RNBackgroundExecution.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RNBackgroundExecution.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,7 +31,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0CFC2B624453CAB00474BB3 /* UIKit.framework in Frameworks */,
 				A747B73331B7D9D48DA960666715180F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +91,6 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0CFC2B424453CA200474BB3 /* UIKit.framework */,
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
@@ -234,7 +230,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -331,7 +328,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -365,7 +361,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

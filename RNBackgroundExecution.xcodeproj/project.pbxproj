@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		46E06D63634F71F8837AB93F /* Pods_RNBackgroundExecution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062EEF07DD507496F53813A8 /* Pods_RNBackgroundExecution.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNBackgroundExecution.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNBackgroundExecution.m */; };
+		D0CFC2B7244557E400474BB3 /* RNBackgroundExecution.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3E7B5881CC2AC0600A0062D /* RNBackgroundExecution.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,6 +19,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				D0CFC2B7244557E400474BB3 /* RNBackgroundExecution.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +71,6 @@
 				596E03B1FD00B6041311FE02 /* Pods-RNBackgroundExecution.debug.xcconfig */,
 				41D4C18E5BEE628DC68AC1A0 /* Pods-RNBackgroundExecution.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,9 +259,10 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../React/**",
+					"$(SRCROOT)/../react-native/React/**",
+					"${SRCROOT}/../../ios/Pods/Headers/Public/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
@@ -275,9 +277,10 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../React/**",
+					"$(SRCROOT)/../react-native/React/**",
+					"${SRCROOT}/../../ios/Pods/Headers/Public/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";

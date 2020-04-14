@@ -18,6 +18,8 @@
 
 @implementation RNBackgroundExecution
 
+RCT_EXPORT_MODULE()
+
 - (dispatch_queue_t)methodQueue
 {
   return dispatch_get_main_queue();
@@ -33,8 +35,6 @@
 {
   return NO;
 }
-
-RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(beginBackgroundTaskWithExpirationHandler:(RCTResponseSenderBlock)callback)
 {
@@ -55,4 +55,3 @@ RCT_EXPORT_METHOD(endBackgroundTask)
 }
 
 @end
-
