@@ -10,9 +10,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-static NSString *const RN_BACKGROUND_EXCUTION_TAG = @"RNBackgroundExecution";
-static NSString *const EVENT_EXPIRE = @"expire";
-
 @interface RNBackgroundExecution()
 
 @property (nonatomic, assign) UIBackgroundTaskIdentifier backgroundTaskId;
@@ -21,8 +18,6 @@ static NSString *const EVENT_EXPIRE = @"expire";
 
 @implementation RNBackgroundExecution
 
-RCT_EXPORT_MODULE()
-
 - (dispatch_queue_t)methodQueue
 {
   return dispatch_get_main_queue();
@@ -30,7 +25,7 @@ RCT_EXPORT_MODULE()
 
 - (instancetype)init
 {
-  backgroundTaskId = UIBackgroundTaskInvalid;
+  self.backgroundTaskId = UIBackgroundTaskInvalid;
   return self;
 }
 
@@ -39,22 +34,15 @@ RCT_EXPORT_MODULE()
   return NO;
 }
 
-- (NSArray<NSString *> *)supportedEvents {
-    return @[EVENT_EXPIRE];
-}
+RCT_EXPORT_MODULE();
 
-- (NSString*)eventName:(NSString*)name
-{
-  return [NSString stringWithFormat:@"%@:%@", RN_BACKGROUND_EXCUTION_TAG, name];
-}
-
-RCT_EXPORT_METHOD(beginBackgroundTaskWithExpirationHandler:(RCTResponseSenderBlock)expirationHandler)
+RCT_EXPORT_METHOD(beginBackgroundTaskWithExpirationHandler:(RCTResponseSenderBlock)callback)
 {
   self.backgroundTaskId = [UIApplication.sharedApplication beginBackgroundTaskWithName:@"RNBackgroundExecution task" expirationHandler:^{
     [UIApplication.sharedApplication endBackgroundTask:self.backgroundTaskId];
     self.backgroundTaskID = UIBackgroundTaskInvalid;
     
-    expirationHandler(@[@[YES]]);
+    callback(@[[NSNull null], [NSNull null]]);
   }];
 }
 
