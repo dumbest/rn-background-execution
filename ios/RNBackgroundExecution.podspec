@@ -1,3 +1,6 @@
+require 'json'
+
+package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
 Pod::Spec.new do |s|
   s.name         = "RNBackgroundExecution"
@@ -14,7 +17,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/dumbest/rn-background-execution.git", :tag => "master" }
   s.source_files = "RNBackgroundExecution/**/*.{h,m}"
   s.requires_arc = true
-  s.platform     = :ios, '8.0'
 
   s.dependency "React"
   #s.dependency "others"
