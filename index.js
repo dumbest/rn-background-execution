@@ -5,7 +5,7 @@ const RNBackgroundExecution = NativeModules.RNBackgroundExecution;
 
 export default class BackgroundExecution {
   /**
-   * Begin background execution task.
+   * Mark the start of a task that should continue if the app enters the background.
    */
   static beginBackgroundTask() {
     return new Promise((resolve, reject) => {
@@ -16,7 +16,8 @@ export default class BackgroundExecution {
   }
 
   /**
-   * End background execution task.
+   * Marks the end of a specific long-running background task.
+   * Failure to end the task explicitly will result in the termination of the app.
    */
   static endBackgroundTask() {
     RNBackgroundExecution.endBackgroundTask();

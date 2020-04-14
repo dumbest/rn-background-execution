@@ -1,5 +1,6 @@
 
 # react-native-background-execution
+This method requests additional background execution time for your app. Call this method when leaving a task unfinished might be detrimental to your app’s user experience. For example, call this method before writing data to a file to prevent the system from suspending your app while the operation is in progress.
 
 ## Getting started
 
@@ -19,35 +20,16 @@
 3. In XCode, in the project navigator, select your project. Add `libRNBackgroundExecution.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNBackgroundExecutionPackage;` to the imports at the top of the file
-  - Add `new RNBackgroundExecutionPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-background-execution'
-  	project(':react-native-background-execution').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-background-execution/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-background-execution')
-  	```
-
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNBackgroundExecution.sln` in `node_modules/react-native-background-execution/windows/RNBackgroundExecution.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Background.Execution.RNBackgroundExecution;` to the usings at the top of the file
-  - Add `new RNBackgroundExecutionPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-
-
 ## Usage
 ```javascript
 import RNBackgroundExecution from 'react-native-background-execution';
 
-// TODO: What to do with the module?
-RNBackgroundExecution;
+// Mark the start of a task that should continue if the app enters the background.
+RNBackgroundExecution.beginBackgroundTask().then((error) => {
+  // Callback after remaining background time expires.
+});
+
+// Marks the end of a specific long-running background task.
+RNBackgroundExecution.endBackgroundTask();
 ```
   
