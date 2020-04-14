@@ -1,6 +1,6 @@
 {
   "name": "rn-background-execution",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Ensure that critical tasks finish when your app moves to the background",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,10 @@
   "homepage": "https://github.com/dumbest/rn-background-execution",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dumbest/rn-background-execution.git"
+    "url": "git+https://github.com/dumbest/rn-background-execution.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dumbest/rn-background-execution/issues"
   },
   "license": "MIT",
   "peerDependencies": {
