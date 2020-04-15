@@ -1,5 +1,5 @@
 
-import { NativeModules } from 'react-native';
+import { NativeModules, Platform } from 'react-native';
 
 const RNBackgroundExecution = NativeModules.RNBackgroundExecution;
 
@@ -9,6 +9,10 @@ export default class BackgroundExecution {
    */
   static beginBackgroundTask() {
     return new Promise((resolve, reject) => {
+      if (Platform.OS !== 'ios') {
+        resolve();
+        return;
+      }
       RNBackgroundExecution.beginBackgroundTaskWithExpirationHandler((error) => {
         resolve(error);
       });
@@ -20,6 +24,9 @@ export default class BackgroundExecution {
    * Failure to end the task explicitly will result in the termination of the app.
    */
   static endBackgroundTask() {
+    if (Platform.OS !== 'ios') {
+      return;
+    }
     RNBackgroundExecution.endBackgroundTask();
   }
 };
